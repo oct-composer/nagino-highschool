@@ -1,0 +1,435 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="長野県の私立高校、凪野高等学校。学びと部活動を通じて、一人ひとりの可能性を伸ばします。">
+  <title>凪野高等学校｜学校法人 凪野学園</title>
+  <style>
+    :root {
+      --navy: #203b50;
+      --blue: #476b80;
+      --light: #f3f5f6;
+      --text: #303b43;
+      --muted: #73808a;
+      --white: #fff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      color: var(--text);
+      font-family: "Noto Sans JP", "Yu Gothic", Meiryo, sans-serif;
+      line-height: 1.8;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .topbar {
+      padding: 8px 5%;
+      background: var(--navy);
+      color: var(--white);
+      font-size: 12px;
+      text-align: right;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 22px 5%;
+      background: var(--white);
+    }
+
+    .school-name {
+      margin: 0;
+      color: var(--navy);
+      font-size: 25px;
+      letter-spacing: 0.08em;
+      line-height: 1.4;
+    }
+
+    .school-name small {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--muted);
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      font-weight: normal;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 22px;
+      font-size: 13px;
+    }
+
+    nav a:hover,
+    .news-title:hover {
+      color: var(--blue);
+    }
+
+    .hero {
+      min-height: 420px;
+      display: flex;
+      align-items: center;
+      padding: 60px 9%;
+      color: var(--white);
+      background:
+        linear-gradient(90deg, rgba(18, 43, 60, 0.84), rgba(18, 43, 60, 0.12)),
+        linear-gradient(135deg, #7895a4, #c4d1d4 55%, #657e8c);
+    }
+
+    .hero-content {
+      max-width: 580px;
+    }
+
+    .hero-label {
+      font-size: 12px;
+      letter-spacing: 0.2em;
+    }
+
+    .hero h2 {
+      margin: 18px 0;
+      font-size: clamp(30px, 4vw, 48px);
+      font-weight: 500;
+      line-height: 1.5;
+      letter-spacing: 0.06em;
+    }
+
+    .hero p {
+      max-width: 440px;
+      font-size: 14px;
+    }
+
+    .section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 68px 28px;
+    }
+
+    .section-heading {
+      margin-bottom: 28px;
+    }
+
+    .section-heading h2 {
+      margin: 0;
+      color: var(--navy);
+      font-size: 26px;
+      font-weight: 500;
+    }
+
+    .section-heading p {
+      margin: 2px 0 0;
+      color: var(--muted);
+      font-size: 11px;
+      letter-spacing: 0.15em;
+    }
+
+    .news-list {
+      border-top: 1px solid #dfe4e7;
+    }
+
+    .news-item {
+      display: grid;
+      grid-template-columns: 110px 100px 1fr;
+      align-items: center;
+      gap: 16px;
+      padding: 17px 8px;
+      border-bottom: 1px solid #dfe4e7;
+      font-size: 14px;
+    }
+
+    .news-date {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .tag {
+      width: fit-content;
+      min-width: 76px;
+      padding: 2px 8px;
+      border: 1px solid #cbd6dc;
+      color: var(--blue);
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .news-title {
+      transition: color 0.2s;
+    }
+
+    .more-link {
+      display: inline-block;
+      margin-top: 24px;
+      padding: 10px 22px;
+      border: 1px solid #b9c5cc;
+      color: var(--navy);
+      font-size: 13px;
+    }
+
+    .intro {
+      background: var(--light);
+    }
+
+    .intro-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 48px;
+    }
+
+    .intro h3 {
+      margin-top: 0;
+      color: var(--navy);
+      font-size: 23px;
+      font-weight: 500;
+    }
+
+    .intro p {
+      font-size: 14px;
+    }
+
+    .intro-visual {
+      min-height: 250px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      background: linear-gradient(145deg, #d3dfe3, #9fb5bf);
+      color: #405d6d;
+      text-align: center;
+      font-size: 13px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .card {
+      min-height: 145px;
+      padding: 24px;
+      border: 1px solid #e0e5e8;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+
+    .card:hover {
+      border-color: #8da5b2;
+      transform: translateY(-2px);
+    }
+
+    .card h3 {
+      margin: 0 0 8px;
+      color: var(--navy);
+      font-size: 18px;
+      font-weight: 500;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .arrow {
+      display: block;
+      margin-top: 12px;
+      color: var(--blue);
+      text-align: right;
+    }
+
+    footer {
+      padding: 36px 5%;
+      background: var(--navy);
+      color: var(--white);
+      font-size: 12px;
+    }
+
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    footer p {
+      margin: 5px 0;
+    }
+
+    .fiction {
+      margin-top: 24px;
+      color: #c6d2d9;
+      font-size: 11px;
+    }
+
+    @media (max-width: 760px) {
+      header {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      nav {
+        gap: 10px 18px;
+      }
+
+      .hero {
+        min-height: 360px;
+        padding: 44px 7%;
+      }
+
+      .section {
+        padding: 48px 22px;
+      }
+
+      .news-item {
+        grid-template-columns: 90px 1fr;
+        gap: 5px 12px;
+      }
+
+      .news-title {
+        grid-column: 1 / -1;
+      }
+
+      .intro-inner {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">学校法人 凪野学園</div>
+
+  <header>
+    <h1 class="school-name">
+      <small>NAGINO HIGH SCHOOL</small>
+      凪野高等学校
+    </h1>
+    <nav aria-label="メインナビゲーション">
+      <a href="#about">学校紹介</a>
+      <a href="#education">教育・進路</a>
+      <a href="#life">学校生活</a>
+      <a href="#clubs">部活動</a>
+      <a href="#admission">入試情報</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <div class="hero-label">LEARN · CHALLENGE · GROW</div>
+        <h2>学びを深め、<br>可能性を広げる。</h2>
+        <p>
+          一人ひとりの個性を大切にしながら、
+          学びと挑戦を通じて未来への一歩を育みます。
+        </p>
+      </div>
+    </section>
+
+    <section class="section" id="news">
+      <div class="section-heading">
+        <h2>お知らせ</h2>
+        <p>NEWS & INFORMATION</p>
+      </div>
+
+      <div class="news-list">
+        <div class="news-item">
+          <span class="news-date">2026.10.15</span>
+          <span class="tag">学校生活</span>
+          <a class="news-title" href="#life">秋の学校行事を実施しました</a>
+        </div>
+        <div class="news-item">
+          <span class="news-date">2026.10.08</span>
+          <span class="tag">部活動</span>
+          <a class="news-title" href="#clubs">県大会に向けた各部の活動について</a>
+        </div>
+        <div class="news-item">
+          <span class="news-date">2026.10.01</span>
+          <span class="tag">入試情報</span>
+          <a class="news-title" href="#admission">学校説明会のご案内</a>
+        </div>
+      </div>
+      <a class="more-link" href="#news">お知らせ一覧　→</a>
+    </section>
+
+    <section class="intro" id="about">
+      <div class="section intro-inner">
+        <div>
+          <div class="section-heading">
+            <h2>凪野高校について</h2>
+            <p>ABOUT OUR SCHOOL</p>
+          </div>
+          <h3>自分らしい未来を、ここから。</h3>
+          <p>
+            凪野高等学校では、基礎学力の定着と主体的に学ぶ姿勢を大切にしています。
+            仲間とともに学び、さまざまな経験を重ねるなかで、
+            自分の可能性を見つけていきます。
+          </p>
+          <a class="more-link" href="#education">教育方針について　→</a>
+        </div>
+        <div class="intro-visual">
+          校舎・授業風景などの写真を配置するエリア
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="education">
+      <div class="section-heading">
+        <h2>学びと学校生活</h2>
+        <p>LEARNING & CAMPUS LIFE</p>
+      </div>
+      <div class="cards">
+        <a class="card" href="#education">
+          <h3>教育・進路</h3>
+          <p>日々の学びと、一人ひとりに合わせた進路支援。</p>
+          <span class="arrow">詳しく見る　→</span>
+        </a>
+        <a class="card" href="#life" id="life">
+          <h3>学校生活</h3>
+          <p>年間行事や学校の日常をご紹介します。</p>
+          <span class="arrow">詳しく見る　→</span>
+        </a>
+        <a class="card" href="#clubs" id="clubs">
+          <h3>部活動</h3>
+          <p>仲間とともに目標に向かって取り組む活動。</p>
+          <span class="arrow">詳しく見る　→</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="section" id="admission" style="padding-top: 0;">
+      <div class="section-heading">
+        <h2>入試情報</h2>
+        <p>ADMISSIONS</p>
+      </div>
+      <p>募集要項や学校説明会など、入試に関する情報をご案内します。</p>
+      <a class="more-link" href="#admission">入試情報を見る　→</a>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <p><strong>学校法人 凪野学園　凪野高等学校</strong></p>
+      <p>学校案内　｜　アクセス　｜　お問い合わせ</p>
+      <p class="fiction">
+        ※本サイトに登場する学校・人物・団体等は架空のものです。
+        本サイトはフィクション作品の一部です。
+      </p>
+    </div>
+  </footer>
+</body>
+</html>
